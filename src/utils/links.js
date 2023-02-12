@@ -4,7 +4,6 @@ import { FaWpforms } from "react-icons/fa";
 import { ImProfile } from "react-icons/im";
 
 const links = [
-  //burda ne yapti?
   { id: 1, text: "stats", path: "/", icon: <IoBarChartSharp /> },
   { id: 2, text: "all jobs", path: "all-job", icon: <MdQueryStats /> },
   { id: 3, text: "add job", path: "add-job", icon: <FaWpforms /> },

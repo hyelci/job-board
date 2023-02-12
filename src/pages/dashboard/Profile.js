@@ -1,5 +1,76 @@
+import { useState } from "react";
+import { FormRow } from "../../components";
+import Wrapper from "../../assets/wrappers/DashboardFormPage";
+import { useDispatch, useSelector } from "react-redux";
+import { toast } from "react-toastify";
+import { updateUser } from "../../features/user/userSlice";
+
 const Profile = () => {
-  return <h1>Profile</h1>;
+  const { isLoading, user } = useSelector((store) => store.user);
+  const dispatch = useDispatch();
+  const [userData, setUserData] = useState({
+    //userData'nin ilk degerleri bunlar degil mi? ama user?. ne demek
+    name: user?.name || "",
+    email: user?.email || "",
+    lastName: user?.lastName || "",
+    location: user?.location || "",
+  });
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const { name, email, lastName, location } = userData;
+    if (!name || !email || !lastName || !location) {
+      toast.error("please fill out all fields");
+      return;
+    }
+    dispatch(updateUser(userData));
+  };
+
+  const handleChange = (e) => {
+    const name = e.target.name;
+    const value = e.target.value;
+    setUserData({ ...userData, [name]: value });
+  };
+
+  return (
+    <Wrapper>
+      <form className="form" action="" onSubmit={handleSubmit}>
+        <h3>profile</h3>
+        <div className="form-center">
+          <FormRow
+            type="text"
+            name="name"
+            value={userData.name}
+            handleChange={handleChange}
+          />
+          <FormRow
+            type="text"
+            labelText="last name" //burda niye labelText var. FormRow'da labelText || name yazdik?
+            name="lastName"
+            value={userData.lastName}
+            handleChange={handleChange}
+          />
+          <FormRow
+            type="email"
+            name="email"
+            value={userData.email}
+            handleChange={handleChange}
+          />
+          <FormRow
+            type="text"
+            name="location"
+            value={userData.location}
+            handleChange={handleChange}
+          />
+          <button type="submit" className="btn btn-block" disable={isLoading}>
+            {isLoading ? "Please Wait..." : "Save Changes"}
+          </button>
+        </div>
+      </form>
+    </Wrapper>
+  );
 };
 
 export default Profile;
+
+//37deki FormRow type="text" name="name" name=name ne demek?

@@ -62,7 +62,7 @@ function Register() {
           <FormRow
             type="text"
             name="name"
-            value={values.name} //bunu anlamadim ya?
+            value={values.name}
             handleChange={handleChange}
           />
         )}
