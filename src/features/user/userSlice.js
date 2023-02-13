@@ -47,23 +47,20 @@ const userSlice = createSlice({
     toggleSidebar: (state) => {
       state.isSidebarOpen = !state.isSidebarOpen;
     },
-    logoutUser: (state) => {
+    logoutUser: (state, { payload }) => {
       state.user = null;
       state.isSidebarOpen = false;
       removeUserFromLocalStorage();
+      if (payload) {
+        toast.success(payload);
+      }
     },
   },
   extraReducers: {
     [registerUser.pending]: (state) => {
       state.isLoading = true;
     },
-    // action = {
-    //   type: "asdaslkjdankldaskdfj",
-    //   payload: {
-    //     token: "lkfklaf",
-    //     name: Fatih
-    //   }
-    // }
+
     [registerUser.fulfilled]: (state, action) => {
       const { user } = action.payload;
       state.isLoading = true;
