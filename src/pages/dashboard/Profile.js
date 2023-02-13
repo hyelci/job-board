@@ -9,7 +9,6 @@ const Profile = () => {
   const { isLoading, user } = useSelector((store) => store.user);
   const dispatch = useDispatch();
   const [userData, setUserData] = useState({
-    //userData'nin ilk degerleri bunlar degil mi? ama user?. ne demek
     name: user?.name || "",
     email: user?.email || "",
     lastName: user?.lastName || "",
@@ -45,7 +44,7 @@ const Profile = () => {
           />
           <FormRow
             type="text"
-            labelText="last name" //burda niye labelText var. FormRow'da labelText || name yazdik?
+            labelText="last name"
             name="lastName"
             value={userData.lastName}
             handleChange={handleChange}
@@ -72,5 +71,3 @@ const Profile = () => {
 };
 
 export default Profile;
-
-//37deki FormRow type="text" name="name" name=name ne demek?

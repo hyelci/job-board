@@ -12,7 +12,7 @@ export const registerUserThunk = async (url, user, thunkAPI) => {
 
 export const loginUserThunk = async (url, user, thunkAPI) => {
   try {
-    const response = await customFetch.post(url, user); //customFetch neden .post?
+    const response = await customFetch.post(url, user);
 
     return response.data;
   } catch (error) {
@@ -23,7 +23,6 @@ export const loginUserThunk = async (url, user, thunkAPI) => {
 export const updateUserThunk = async (url, user, thunkAPI) => {
   try {
     const resp = await customFetch.patch(url, user, {
-      //customFetch neden .patch
       headers: {
         authorization: `Bearer ${thunkAPI.getState().user.user.token}`,
       },
@@ -31,13 +30,9 @@ export const updateUserThunk = async (url, user, thunkAPI) => {
     return resp.data;
   } catch (error) {
     if (error.response.status === 401) {
-      //error.response.status bunlari console'da yazdirip bakmisti ama ben console'da yazdirmadan nasl yazabilirim?
       thunkAPI.dispatch(logoutUser());
       return thunkAPI.rejectWithValue("Unauthorized! Logging Out...");
     }
     return thunkAPI.rejectWithValue(error.response.data.msg);
-    //burdaki error.response.data.msg? i anlatir misin?
   }
 };
-
-//bunun ustunden gecebilir miyiz?

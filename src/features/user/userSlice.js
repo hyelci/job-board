@@ -55,8 +55,15 @@ const userSlice = createSlice({
   },
   extraReducers: {
     [registerUser.pending]: (state) => {
-      state.isLoadoing = true;
+      state.isLoading = true;
     },
+    // action = {
+    //   type: "asdaslkjdankldaskdfj",
+    //   payload: {
+    //     token: "lkfklaf",
+    //     name: Fatih
+    //   }
+    // }
     [registerUser.fulfilled]: (state, action) => {
       const { user } = action.payload;
       state.isLoading = true;
