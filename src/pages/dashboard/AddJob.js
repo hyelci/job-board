@@ -6,6 +6,7 @@ import {
   handleChange,
   clearValues,
   createJob,
+  editJob,
 } from "../../features/job/jobSlice";
 import userSlice from "../../features/user/userSlice";
 import { useResolvedPath } from "react-router-dom";
@@ -33,23 +34,33 @@ const AddJob = () => {
       toast.error("Please fill out All Fields ");
       return;
     }
+    if (isEditing) {
+      dispatch(
+        editJob({
+          jobId: editJobId,
+          job: { position, company, jobLocation, jobType, status },
+        })
+      );
+      return; // bu return neden var?
+    }
     dispatch(createJob({ position, company, jobLocation, jobType, status }));
   };
 
   const handleJobInput = (e) => {
     const name = e.target.name;
     const value = e.target.value;
-    dispatch(handleChange({ name, value })); // buna bakabilir miyiz bi
+    dispatch(handleChange({ name, value }));
   };
 
   useEffect(() => {
-    //burda nasil kaydettiysen onceden onu default olarak mi gosteriyor?
-    dispatch(
-      handleChange({
-        name: "jobLocation",
-        value: user.location,
-      })
-    );
+    if (!isEditing) {
+      dispatch(
+        handleChange({
+          name: "jobLocation",
+          value: user.location,
+        })
+      );
+    }
   }, []);
 
   return (

@@ -6,7 +6,7 @@ import { toggleSidebar } from "../features/user/userSlice";
 import NavLinks from "./NavLinks";
 
 const SmallSidebar = () => {
-  const { isSidebarOpen } = useSelector((store) => store.user); //niye isSidebarOpen'i destructure ediyoruz burada?
+  const { isSidebarOpen } = useSelector((store) => store.user);
   const dispatch = useDispatch();
 
   return (

@@ -23,8 +23,8 @@ const Landing = () => {
           <Link to="/register" className="btn btn-hero">
             Login/Register
           </Link>
-          <img src={main} className="img main-img" />
         </div>
+        <img src={main} className="img main-img" />
       </div>
     </main>
   );

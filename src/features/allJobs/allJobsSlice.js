@@ -24,8 +24,7 @@ const initialState = {
 export const getAllJobs = createAsyncThunk(
   "allJobs/getJobs",
   async (_, thunkAPI) => {
-    //burdaki altcizgi ne demek?
-    let url = `/jobs`; // bu neydi?
+    let url = `/jobs`;
     try {
       const resp = await customFetch.get(url, {
         headers: {
@@ -63,7 +62,7 @@ const allJobsSlice = createSlice({
 
     [getAllJobs.rejected]: (state, { payload }) => {
       state.isLoading = false;
-      toast.error(payload); //payload?
+      toast.error(payload);
     },
   },
 });
