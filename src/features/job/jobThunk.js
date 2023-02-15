@@ -6,7 +6,7 @@ import authHeader from "../../utils/authHeader";
 
 export const createJobThunk = async (job, thunkAPI) => {
   try {
-    const resp = await customFetch.post("/jobs", job, authHeader(thunkAPI)); //authHeader'i parametre gecmek zorunda? ve thunkApi'yi da ona parametre gecmek zorunda mi?
+    const resp = await customFetch.post("/jobs", job, authHeader(thunkAPI));
     thunkAPI.dispatch(clearValues());
     return resp.data;
   } catch (error) {

@@ -3,13 +3,8 @@ import { Landing, Error, Register, ProtectedRoute } from "./pages";
 import { Logo } from "./components";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import {
-  Stats,
-  AddJob,
-  AllJobs,
-  Profile,
-  SharedLayout,
-} from "./pages/dashboard";
+import { AddJob, AllJobs, Profile, SharedLayout } from "./pages/dashboard";
+import Stats from "./pages/dashboard/Stats";
 
 function App() {
   return (
