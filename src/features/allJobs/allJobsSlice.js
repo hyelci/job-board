@@ -45,7 +45,7 @@ const allJobsSlice = createSlice({
     changePage: (state, { payload }) => {
       state.page = payload;
     },
-    clearAllJobsState: (state) => initialState, //state'lerin degerlerini ilk haline mi ceviriyor? iste job type: all gibi?
+    clearAllJobsState: (state) => initialState,
   },
   extraReducers: (builder) => {
     builder

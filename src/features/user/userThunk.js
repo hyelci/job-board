@@ -37,7 +37,7 @@ export const updateUserThunk = async (url, user, thunkAPI) => {
 
 export const clearStoreThunk = async (message, thunkAPI) => {
   try {
-    thunkAPI.dispatch(logoutUser(message)); //burdaki meesage neydi?
+    thunkAPI.dispatch(logoutUser(message));
     thunkAPI.dispatch(clearAllJobsState());
     thunkAPI.dispatch(clearValues());
     return Promise.resolve();
@@ -45,4 +45,3 @@ export const clearStoreThunk = async (message, thunkAPI) => {
     return Promise.reject();
   }
 };
-//clearStoreThunk'u neden userThunk icine yazdi ki? ben alljob'a yazmasini beklerdim
