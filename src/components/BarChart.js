@@ -23,6 +23,3 @@ const BarChartComponent = ({ data }) => {
 };
 
 export default BarChartComponent;
-
-//bunlari cok anlamadim
-//data nereden geliyor?

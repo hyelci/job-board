@@ -21,6 +21,3 @@ const ChartsContainer = () => {
 };
 
 export default ChartsContainer;
-
-//Wrapper icindeki button'da setBarChart(!barChart) ne demek?
-//<BarChart data={data} nereden geliyor?
