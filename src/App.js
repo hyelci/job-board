@@ -9,7 +9,6 @@ import Stats from "./pages/dashboard/Stats";
 function App() {
   return (
     <BrowserRouter>
-      {/* <Logo /> */}
       <Routes>
         <Route
           path="/"

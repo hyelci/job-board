@@ -4,7 +4,6 @@ import "normalize.css";
 import "./index.css";
 import App from "./App";
 import { store } from "./store";
-// import { StoreContext } from "./context";
 import { Provider } from "react-redux";
 
 const container = document.getElementById("root");

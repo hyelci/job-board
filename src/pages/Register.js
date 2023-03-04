@@ -15,7 +15,7 @@ const initialState = {
 };
 function Register() {
   const [values, setValues] = useState(initialState);
-  const { user, isLoading } = useSelector((store) => store.user); //user'dan user ve isLoading'i destructure ediyoruz.
+  const { user, isLoading } = useSelector((store) => store.user);
   const dispatch = useDispatch();
   const navigate = useNavigate();
 

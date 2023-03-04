@@ -11,5 +11,3 @@ export const getUserFromLocalStorage = () => {
   const user = result ? JSON.parse(result) : null;
   return user;
 };
-
-//buraya bi bakabilir miyiz?
