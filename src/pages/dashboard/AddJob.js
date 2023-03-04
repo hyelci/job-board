@@ -8,8 +8,6 @@ import {
   createJob,
   editJob,
 } from "../../features/job/jobSlice";
-import userSlice from "../../features/user/userSlice";
-import { useResolvedPath } from "react-router-dom";
 import { useEffect } from "react";
 
 const AddJob = () => {
@@ -61,7 +59,7 @@ const AddJob = () => {
         })
       );
     }
-  }, []);
+  }, [dispatch, isEditing, user.location]);
 
   return (
     <Wrapper>

@@ -6,7 +6,6 @@ import {
   getUserFromLocalStorage,
   removeUserFromLocalStorage,
 } from "../../utils/localStorage";
-import customFetch from "../../utils/axios";
 import {
   loginUserThunk,
   registerUserThunk,

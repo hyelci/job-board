@@ -1,6 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Landing, Error, Register, ProtectedRoute } from "./pages";
-import { Logo } from "./components";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { AddJob, AllJobs, Profile, SharedLayout } from "./pages/dashboard";
